@@ -1,0 +1,11 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/EjerciciosBlazor
+/EjerciciosBlazor/Client/bin/Debug/netstandard2.1
+/EjerciciosBlazor/Client/obj
+/EjerciciosBlazor/Server/bin/Debug/netcoreapp3.1
+/EjerciciosBlazor/Server/obj
+/EjerciciosBlazor/Shared/bin/Debug/netstandard2.1
+/EjerciciosBlazor/Shared/obj

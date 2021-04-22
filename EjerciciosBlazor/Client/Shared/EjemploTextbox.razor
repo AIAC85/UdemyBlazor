@@ -1,0 +1,5 @@
+﻿<input type="text" placeholder="defecto" @attributes="ParametrosArbitrarios" />
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)] public IDictionary<string, object> ParametrosArbitrarios { get; set; }
+}

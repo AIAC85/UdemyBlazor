@@ -1,0 +1,15 @@
+﻿@using System.IO
+
+<div>
+    <label>@Label</label>
+    <!--<InputFile accept=".jpg,.jpeg,.png" />-->
+</div>
+
+@code {
+    [Parameter] public string Label { get; set; } = "Imagen";
+
+    /*async Task OnChange(InputFileChangeEventArgs e)
+    {
+        var imagenes = e.GetMultipleFiles();
+    }*/
+}

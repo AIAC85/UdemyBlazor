@@ -1,0 +1,32 @@
+﻿@page "/"
+@inject IRepositorio repositorio
+
+<div>
+
+    <h3>Películas</h3>
+
+    <ListadoPeliculas Peliculas="Peliculas" />
+
+    @*<EjemploTextbox placeholder="hola" />
+
+    <EjemploTextbox @attributes="EjemploParametrosArbitrarios" />
+
+    <EjemploTextbox />*@
+</div>
+
+@code {
+
+    //private Dictionary<string, object> EjemploParametrosArbitrarios = new Dictionary<string, object>()
+    //{
+    //    { "placeholder", "adios" },
+    //    { "disabled", "true" }
+    //};
+
+    List<Pelicula> Peliculas;
+
+    protected override void OnInitialized()
+    {
+        Peliculas = repositorio.ObtenerPeliculas();
+    }
+
+}
