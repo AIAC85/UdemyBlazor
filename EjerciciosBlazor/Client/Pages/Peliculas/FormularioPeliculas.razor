@@ -1,6 +1,6 @@
 ﻿<h3>Formulario Peliculas</h3>
 
-<EditForm Model="Pelicula" OnValidSubmit="OnValidSubmit">
+<EditForm Model="Pelicula" OnValidSubmit="OnDataAnnonationsValidated">
     <DataAnnotationsValidator />
     <div class="form-group">
         <label>Título</label>
@@ -67,5 +67,10 @@
             posterTemporal = Pelicula.Poster;
             Pelicula.Poster = null;
         }
+    }
+
+    private async Task OnDataAnnonationsValidated()
+    {
+        Pelicula.GenerosPelicula = Seleccionados.Select(x => new GeneroPelicula { Generoid = int.Parse(x.Llave) }).ToList();
     }
 }

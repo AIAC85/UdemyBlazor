@@ -14,5 +14,6 @@ namespace EjerciciosBlazor.Shared.Entidades
         public string Foto { get; set; }
         [Required]
         public DateTime? FechaNacimiento { get; set; }
+        public List<PeliculaActor> PeliculasActor { get; set; }
     }
 }

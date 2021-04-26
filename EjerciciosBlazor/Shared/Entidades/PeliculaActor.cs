@@ -4,11 +4,13 @@ using System.Text;
 
 namespace EjerciciosBlazor.Shared.Entidades
 {
-    public class GeneroPelicula
+    public class PeliculaActor
     {
+        public int PersonaId { get; set; }
         public int PeliculaId { get; set; }
-        public int Generoid { get; set; }
-        public Genero Genero { get; set; }
+        public Persona Persona { get; set; }
         public Pelicula Pelicula { get; set; }
+        public string Personaje { get; set; }
+        public int Orden { get; set; }
     }
 }

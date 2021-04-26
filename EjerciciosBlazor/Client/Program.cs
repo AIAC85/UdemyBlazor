@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using EjerciciosBlazor.Client.Repositorios;
+using EjerciciosBlazor.Client.Helpers;
 
 namespace EjerciciosBlazor.Client
 {
@@ -16,7 +17,7 @@ namespace EjerciciosBlazor.Client
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("app");
+            builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
@@ -27,7 +28,9 @@ namespace EjerciciosBlazor.Client
 
         private static void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IRepositorio, Repositorio>();
+            //services.AddSingleton<IRepositorio, Repositorio>();
+            services.AddScoped<IRepositorio, Repositorio>();
+            services.AddScoped<IMostrarMensajes, MostrarMensajes>();
         }
     }
 }

@@ -2,12 +2,31 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace EjerciciosBlazor.Client.Repositorios
 {
     public class Repositorio : IRepositorio
     {
+
+        private readonly HttpClient HttpClient;
+
+        public Repositorio(HttpClient httpClient)
+        {
+            HttpClient = httpClient;
+        }
+
+        public async Task<HttpResponseWrapper<object>> Post<T>(string url, T enviar)
+        {
+            var enviarJSON = JsonSerializer.Serialize(enviar);
+            var enviarContent = new StringContent(enviarJSON, Encoding.UTF8, "application/json");
+            var responseHttp = await HttpClient.PostAsync(url, enviarContent);
+            return new HttpResponseWrapper<object>(null, !responseHttp.IsSuccessStatusCode, responseHttp);
+        }
+
         public List<Pelicula> ObtenerPeliculas()
         {
             return new List<Pelicula>()

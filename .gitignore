@@ -9,3 +9,5 @@
 /EjerciciosBlazor/Server/obj
 /EjerciciosBlazor/Shared/bin/Debug/netstandard2.1
 /EjerciciosBlazor/Shared/obj
+/EjerciciosBlazor/Client/bin/Debug/net5.0
+/EjerciciosBlazor/Server/bin/Debug/net5.0
